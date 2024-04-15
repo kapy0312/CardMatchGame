@@ -1,0 +1,293 @@
+@font-face {
+    font-family: Titan One;
+    /* 字體的名稱 */
+    src: url('font/TitanOne-Regular.ttf') format('truetype');
+    font-family: GenSenRounded-B;
+    /* 字體的名稱 */
+    src: url('font/GenSenRounded-B.ttc') format('truetype');
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明的灰色背景 */
+    z-index: 999; /* 确保在其他元素之上 */
+}
+
+#overlay img {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* 在需要時換行 */
+    gap: 0;
+    /* 無間隙 */
+    /*justify-content: space-between;  水平間距相等 */
+    /* justify-content: space-between;
+    align-items: center; */
+    /* display: block; */
+    width: 500px;
+    height: 600px;
+}
+
+/* #cardContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 150px;
+} */
+
+.sidebar {
+    width: 200px;
+    height: 300px;
+    /* background-image: url('img/front-image.png'); */
+    overflow: hidden;
+}
+
+.box {
+    /* margin: 50px auto; */
+    width: 100px;
+    height: 150px;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    /*3D效果 */
+    transition: 1s ease;
+}
+
+.card {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /*表示隱藏被旋轉div元素的背面，這樣旋轉之後，第一張卡片是背面朝螢幕方向，看不到，第二張卡片旋轉之後則是正面朝像螢幕，即形成了旋轉的效果。 */
+    border-radius: 20px;
+}
+
+.front {
+    transform: rotateY(180deg);
+    background-size: cover;
+}
+
+
+.front1 {
+    transform: rotateY(180deg);
+    background-image: url('img/front-01.png');
+    background-size: cover;
+}
+
+.front2 {
+    transform: rotateY(180deg);
+    background-image: url('img/front-02.png');
+    background-size: cover;
+}
+
+.front3 {
+    transform: rotateY(180deg);
+    background-image: url('img/front-03.png');
+    background-size: cover;
+}
+
+.front4 {
+    transform: rotateY(180deg);
+    background-image: url('img/front-04.png');
+    background-size: cover;
+}
+
+.front5 {
+    transform: rotateY(180deg);
+    background-image: url('img/front-05.png');
+    background-size: cover;
+}
+
+.front6 {
+    transform: rotateY(180deg);
+    background-image: url('img/front-06.png');
+    background-size: cover;
+}
+
+.front7 {
+    transform: rotateY(180deg);
+    background-image: url('img/front-07.png');
+    background-size: cover;
+}
+
+
+.back {
+    /*繞著Y軸旋轉*/
+    background-image: url('img/占卜牌背.png');
+    background-size: cover;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+    /*繞著Y軸旋轉*/
+}
+
+.flipped1 {
+    /* transform: translateY(-200px) rotateY(180deg); 繞著Y軸旋轉*/
+    animation: moveUpAndFlip1 1s ease forwards;
+}
+
+@keyframes moveUpAndFlip1 {
+
+    /* 0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-200px);
+    }
+
+    100% {
+        transform: translateY(-200px) rotateY(180deg);
+    } */
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(0px) rotateY(180deg);
+    }
+}
+
+.flipped2 {
+    /* transform: translateY(-200px) rotateY(180deg); 繞著Y軸旋轉*/
+    animation: moveUpAndFlip2 1s ease forwards;
+}
+
+@keyframes moveUpAndFlip2 {
+    0% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.card:hover {
+    transform: translateY(-20px);
+}
+
+.display-card {
+    width: 200px;
+    height: 300px;
+    background-image: url('img/front-image.png');
+    background-size: cover;
+    display: none;
+    /* 初始設置為不可見 */
+}
+
+.style-title{
+    /* font: 700 4em/1 "Oswald", sans-serif; */
+    font: 36px "GenSenRounded-B", sans-serif;
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(255, 255, 255, .5);
+
+    /* Clip Background Image */
+
+    /* background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y; */
+    background: url("img/文字特效1.png") repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Animate Background Image */
+
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 80s linear infinite;
+
+    /* Activate hardware acceleration for smoother animations */
+
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+}
+
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+.style-sorce{
+    /* font: 700 4em/1 "Oswald", sans-serif; */
+    font: 35px "GenSenRounded-B", sans-serif;
+    letter-spacing: 0;
+    padding: .25em 0 .325em;
+    display: block;
+    margin: 0 auto;
+    text-shadow: 0 0 80px rgba(24, 7, 150, 0.5);
+}
+
+.resetbtn,
+.resetbtn:focus {
+    position: relative;
+    min-width: 20px;
+    background: none;
+    border: none;
+    color: #58afd1;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: inset 0 0 0 4px #58afd1;
+    transition: color 0.25s 0.0833333333s;
+    padding: 10px 20px;
+}
+.resetbtn:before,
+.resetbtn:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+    border: 0 solid transparent;
+    box-sizing: border-box;
+}
+.resetbtn:before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+}
+.resetbtn:after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+}
+.resetbtn:hover {
+    color: #ffe593;
+}
+.resetbtn:hover:before,
+.resetbtn:hover:after {
+    border-color: #ffe593;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+}

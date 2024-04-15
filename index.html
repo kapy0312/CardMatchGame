@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://kit.fontawesome.com/a20b53ca04.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>卡牌抽牌特效</title>
+
+    <script>
+        var google_apps_script_url = "https://script.google.com/macros/s/AKfycbxz858OGNHxwJ4ZJRqmCjAyHeST05HGYty0zPyQ2ChRqWVnxHGEKgQnEnlYvb7vdSIChw/exec";
+    </script>
+</head>
+
+<body>
+    <div id="overlay"><img src="img/等待圖示.gif" alt="GIF Image"></div>
+
+    <div class="container">
+
+        <div class="style-title">道場中英文卡牌配對遊戲
+            <a href="https://docs.google.com/spreadsheets/d/112EYKWGGWG2Ar5V6CaCvN0u4AYvea7ogH9pgbZLKH3k/edit?usp=sharing"
+                target="_blank" class="fa-solid fa-arrow-up-right-from-square fa-lg"></a></h2>
+        </div>
+
+        <div class="style-sorce">
+            <a href="javascript: void(0)" class="resetbtn">
+                重新開始
+            </a>
+            　　　　　　分數: <span id="score">0</span>
+        </div>
+
+
+
+        <div class="card-container">
+            <!-- <div class="sidebar">
+            <div class="display-card"></div>
+        </div> -->
+
+            <div class="box" onclick="flipCard(0)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(1)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(2)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(3)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(4)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(5)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(6)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+            <div class="box" onclick="flipCard(7)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(8)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(9)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(10)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(11)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(12)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(13)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(14)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(15)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(16)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(17)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(18)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+
+            <div class="box" onclick="flipCard(19)">
+                <div class="card back"></div>
+                <div class="card front"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 引入 Bootstrap JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+    </script>
+
+</body>
+
+</html>
