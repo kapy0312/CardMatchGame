@@ -57,7 +57,7 @@ function LoadGoolgeData_20() {
 
             // RandomCardItems = CardItems.slice(0, RandomCardItems.length - 20);; // 使用 slice() 複製一份新的陣列
 
-            // shuffleArray(RandomCardItems);// Shuffle the array
+            shuffleArray(RandomCardItems);// Shuffle the array
 
             LoadCardData();
             // CardItems = JSON.parse(data).flat();
