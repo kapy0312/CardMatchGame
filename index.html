@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://kit.fontawesome.com/a20b53ca04.js" crossorigin="anonymous"></script>
+    <!-- 引入 Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>道場中英文卡牌配對遊戲</title>
-
     <script>
-
         var google_apps_script_url = "https://script.google.com/macros/s/AKfycbxz858OGNHxwJ4ZJRqmCjAyHeST05HGYty0zPyQ2ChRqWVnxHGEKgQnEnlYvb7vdSIChw/exec";
     </script>
 </head>
@@ -19,166 +19,159 @@
 
     <div id="overlay"><img src="img/等待圖示.gif" alt="GIF Image"></div>
 
-    <div id="overlayGameOver">
+    <div id="overlayGameOver" class="text-center mt-5">
         <div class="style-title">遊戲結束</div>
         <div class="style-title">恭喜破關!!!</div>
-        <a href="javascript: void(0)" class="resetbtn">
+        <a href="javascript: void(0)" class="resetbtn btn btn-primary mt-3">
             重新開始
         </a>
         <br><br><br>
         <img src="img/拉砲.png" alt="PNG Image" width="300" height="300">
     </div>
 
-    <div class="container">
+    <div class="container mt-5">
 
-        <div class="style-title">道場中英文卡牌配對遊戲
+        <h2 class="text-center">道場中英文卡牌配對遊戲
             <a href="https://docs.google.com/spreadsheets/d/112EYKWGGWG2Ar5V6CaCvN0u4AYvea7ogH9pgbZLKH3k/edit?usp=sharing"
-                target="_blank" class="fa-solid fa-arrow-up-right-from-square fa-lg"></a></h2>
-        </div>
+                target="_blank" class="fa-solid fa-arrow-up-right-from-square fa-lg"></a>
+        </h2>
 
-        <div class="style-sorce">
+        <div class="style-sorce text-center">
             <a href="javascript: void(0)" class="resetbtn">
                 重新開始
             </a>
-            　　　　　　分數: <span id="score">0</span>
+            <span class="ml-3">分數: <span id="score">0</span></span>
         </div>
 
+        <div class="row justify-content-center">
+            <div class="card-container col-md-10">
+                <div class="box" onclick="flipCard(0)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
+                <div class="box" onclick="flipCard(1)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-        <div class="card-container">
-            <!-- <div class="sidebar">
-            <div class="display-card"></div>
-        </div> -->
+                <div class="box" onclick="flipCard(2)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(0)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(3)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(1)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(4)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(2)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(5)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(3)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(6)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
+                <div class="box" onclick="flipCard(7)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(4)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(8)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(5)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(9)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(6)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
-            <div class="box" onclick="flipCard(7)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(10)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(8)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(11)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(9)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(12)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(10)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(13)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(11)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(14)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(12)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(15)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(13)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(16)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(14)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(17)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(15)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
+                <div class="box" onclick="flipCard(18)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
 
-            <div class="box" onclick="flipCard(16)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
-
-            <div class="box" onclick="flipCard(17)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
-
-            <div class="box" onclick="flipCard(18)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
-            </div>
-
-            <div class="box" onclick="flipCard(19)">
-                <div class="card back"></div>
-                <!-- <div class="card front"></div> -->
-                <canvas class="card front"></canvas>
+                <div class="box" onclick="flipCard(19)">
+                    <div class="card back"></div>
+                    <!-- <div class="card front"></div> -->
+                    <canvas class="card front"></canvas>
+                </div>
             </div>
         </div>
     </div>
+
     <!-- 引入 Bootstrap JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
-    <script>
-
-    </script>
-
 </body>
 
 </html>
