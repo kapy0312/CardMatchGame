@@ -10,12 +10,24 @@
     <title>卡牌抽牌特效</title>
 
     <script>
+
         var google_apps_script_url = "https://script.google.com/macros/s/AKfycbxz858OGNHxwJ4ZJRqmCjAyHeST05HGYty0zPyQ2ChRqWVnxHGEKgQnEnlYvb7vdSIChw/exec";
     </script>
 </head>
 
 <body>
+
     <div id="overlay"><img src="img/等待圖示.gif" alt="GIF Image"></div>
+
+    <div id="overlayGameOver">
+        <div class="style-title">遊戲結束</div>
+        <div class="style-title">恭喜破關!!!</div>
+        <a href="javascript: void(0)" class="resetbtn">
+            重新開始
+        </a>
+        <br><br><br>
+        <img src="img/拉砲.png" alt="PNG Image" width="300" height="300">
+    </div>
 
     <div class="container">
 
@@ -40,101 +52,121 @@
 
             <div class="box" onclick="flipCard(0)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(1)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(2)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(3)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(4)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(5)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(6)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
             <div class="box" onclick="flipCard(7)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(8)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(9)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(10)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(11)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(12)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(13)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(14)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(15)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(16)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(17)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(18)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
 
             <div class="box" onclick="flipCard(19)">
                 <div class="card back"></div>
-                <div class="card front"></div>
+                <!-- <div class="card front"></div> -->
+                <canvas class="card front"></canvas>
             </div>
         </div>
     </div>

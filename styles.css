@@ -16,8 +16,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8); /* 半透明的灰色背景 */
-    z-index: 999; /* 确保在其他元素之上 */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* 半透明的灰色背景 */
+    z-index: 999;
+    /* 确保在其他元素之上 */
 }
 
 #overlay img {
@@ -25,6 +27,26 @@
     max-height: 50%;
 }
 
+#overlayGameOver {
+    /* 让 overlayGameOver 元素覆盖整个屏幕并设置为弹性布局 */
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* 垂直布局 */
+    justify-content: center; /* 在垂直方向上居中 */
+    align-items: center; /* 在水平方向上居中 */
+    background-color: rgba(0, 0, 0, 0.9); /* 半透明的灰色背景 */
+    z-index: 999; /* 确保在其他元素之上 */
+    display: none;
+}
+
+.overlayVisible {
+    display: flex !important; /* 重要性以確保覆蓋任何內聯樣式 */
+}
 
 body {
     display: flex;
@@ -141,7 +163,8 @@ body {
 
 .back {
     /*繞著Y軸旋轉*/
-    background-image: url('img/占卜牌背.png');
+    /* background-image: url('img/牌背.png'); */
+    background-image: url('img/牌背.png');
     background-size: cover;
 }
 
@@ -205,7 +228,7 @@ body {
     /* 初始設置為不可見 */
 }
 
-.style-title{
+.style-title {
     /* font: 700 4em/1 "Oswald", sans-serif; */
     font: 36px "GenSenRounded-B", sans-serif;
     letter-spacing: 0;
@@ -233,11 +256,16 @@ body {
 }
 
 @-webkit-keyframes aitf {
-	0% { background-position: 0% 50%; }
-	100% { background-position: 100% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
-.style-sorce{
+.style-sorce {
     /* font: 700 4em/1 "Oswald", sans-serif; */
     font: 35px "GenSenRounded-B", sans-serif;
     letter-spacing: 0;
@@ -253,15 +281,16 @@ body {
     min-width: 20px;
     background: none;
     border: none;
-    color: #58afd1;
+    color: #0e4d66;
     font-size: 1.8rem;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    box-shadow: inset 0 0 0 4px #58afd1;
+    box-shadow: inset 0 0 0 4px #0e4d66;
     transition: color 0.25s 0.0833333333s;
     padding: 10px 20px;
 }
+
 .resetbtn:before,
 .resetbtn:after {
     content: "";
@@ -273,21 +302,29 @@ body {
     border: 0 solid transparent;
     box-sizing: border-box;
 }
+
 .resetbtn:before {
     border-bottom-width: 4px;
     border-left-width: 4px;
 }
+
 .resetbtn:after {
     border-top-width: 4px;
     border-right-width: 4px;
 }
+
 .resetbtn:hover {
-    color: #ffe593;
+    color: #991387;
 }
+
 .resetbtn:hover:before,
 .resetbtn:hover:after {
-    border-color: #ffe593;
+    border-color: #991387;
     transition: border-color 0s, width 0.25s, height 0.25s;
     width: 100%;
     height: 100%;
+}
+
+.hidden {
+    display: none;
 }
