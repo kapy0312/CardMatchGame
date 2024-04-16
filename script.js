@@ -10,11 +10,12 @@ var reBack = false, flipCardRun = false, animationRunning = false;
 var box, box1, box2;
 var FlopArray = new Array(20).fill(false);
 var img = new Image();
+var startTime, timerInterval;
 
 window.addEventListener("load", function () {
 
     Step = 1;
-    
+
     LoadGoolgeData_20();
 
     //var n1=1;
@@ -30,6 +31,18 @@ $('.resetbtn').click(function () {
     // LoadGoolgeData_20();
 
 });
+
+function updateTime() {
+    // 獲取當前時間
+    var currentTime = Date.now();
+
+    // 計算經過的時間（以秒為單位）
+    var elapsedTimeInSeconds = Math.floor((currentTime - startTime) / 1000);
+
+    // 更新顯示時間
+    $('#time').text(elapsedTimeInSeconds);
+}
+
 
 function LoadGoolgeData_20() {
     event.preventDefault();
@@ -61,6 +74,10 @@ function LoadGoolgeData_20() {
             LoadCardData();
             // CardItems = JSON.parse(data).flat();
             $('#overlay').hide();
+
+            //開始計時
+            startTime = Date.now();
+            timerInterval = setInterval(updateTime, 1000);
 
             // alert("載入完成");
         },
@@ -171,6 +188,9 @@ function onAnimationEnd() {
                     // overlayGameOver.classList.remove("hidden");
                     $('#overlayGameOver').addClass('overlayVisible');
                     $("#overlayGameOver").show();
+                    clearInterval(timerInterval); // 清除計時器
+                    $('#score2').text($('#score').text());
+                    $('#time2').text($('#time').text());
                 }
             } else {
                 box1.addClass("flipped2");
