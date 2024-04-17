@@ -69,7 +69,7 @@ function LoadGoolgeData_20() {
 
             RandomCardItems = CardItems.slice(0, 20);
 
-            shuffleArray(RandomCardItems);// Shuffle the array
+            //shuffleArray(RandomCardItems);// Shuffle the array
 
             LoadCardData();
             // CardItems = JSON.parse(data).flat();
@@ -108,13 +108,26 @@ function LoadCardData() {
             ctx.fillStyle = "#000000";
             ctx.textAlign = "center";
 
-            var text = isChineseOrEnglish(RandomCardItems[index]) + "\n" + RandomCardItems[index];
+            // var text = isChineseOrEnglish(RandomCardItems[index]) + "\n" + RandomCardItems[index];
+            var text = RandomCardItems[index];
             var textX = canvas.width / 2;
             var textY = canvas.height / 2;
-            var lineHeight = 20;
-            var lines = text.split("\n");
-            for (var i = 0; i < lines.length; i++) {
-                ctx.fillText(lines[i], textX, textY - (lines.length - 1) * lineHeight / 2 + i * lineHeight);
+
+            if (text.includes("http")) {
+                var img1 = new Image();
+                img1.src = text;
+                img1.onload = function () {
+                    var img1Width = 80;
+                    var img1Height = img1.height * (80 / img1.width);
+                    ctx.drawImage(img1, textX - (img1Width / 2), textY - (img1Height / 2), img1Width, img1Height);
+                }
+            } else {
+                var lineHeight = 20;
+                var lines = text.split("\n");
+                for (var i = 0; i < lines.length; i++) {
+                    ctx.fillText(lines[i], textX, textY - (lines.length - 1) * lineHeight / 2 + i * lineHeight);
+                }
+
             }
 
             // var dataURL = canvas.toDataURL();
