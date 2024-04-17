@@ -173,7 +173,7 @@ function onAnimationEnd() {
 
                     PairItems1 = element;
                     PairItemsIndex1 = onAncardNumber;
-                    if (isChineseOrEnglish(element) === "中文") {
+                    if ((isChineseOrEnglish(element) === "中文") || (isChineseOrEnglish(element) === "圖片")) {
                         PairItems2 = CardItems[index - 1];
                     } else {
                         PairItems2 = CardItems[index + 1];
@@ -246,7 +246,9 @@ function isChineseOrEnglish(str) {
     var englishPattern = /^[A-Za-z]+$/; // 英文字符的正則表達式
     if (chinesePattern.test(str)) {
         return '中文';
-    } else if (englishPattern.test(str)) {
+    } else if (str.includes("http")) {
+        return '圖片';
+    } else if ((englishPattern.test(str)) && (!str.includes("http"))) {
         return 'English';
     } else {
         return '其他';
